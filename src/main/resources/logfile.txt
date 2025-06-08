@@ -1,0 +1,5 @@
+2025-06-01 12:34:56 | INFO | User logged in
+2025-06-01 12:35:02 | ERROR | Database connection failed
+2025-06-01 12:35:10 | INFO | Request completed
+2025-06-01 12:35:15 | WARN | Disk space low
+2025-06-01 12:35:20 | ERROR | Timeout while connecting to service
