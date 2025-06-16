@@ -1,0 +1,19 @@
+1. DataFrame Operations: Given a DataFrame with missing values, how would you fill null values with the mean of each column?
+
+2. Joins: Write a PySpark query to perform an inner join between two DataFrames on multiple columns.
+
+3. Aggregations: How would you calculate the moving average of a column using PySpark?
+
+4. Window Functions: Given a DataFrame of sales transactions, how do you rank sales per customer within each region using a window function?
+
+5. Filtering & Transformation: Given a DataFrame, how do you filter out rows where a column value appears only once?
+
+6. GroupBy & Aggregations: How would you find the top N most frequently occurring words in a column of a DataFrame?
+
+7. Performance Optimization: How do you repartition a DataFrame efficiently before performing a heavy aggregation?
+
+8. Exploding & Flattening Data: Given a DataFrame with an array column, how do you explode it into multiple rows?
+
+9. Handling Duplicates: How would you remove duplicate rows based on multiple columns while keeping the latest record based on a timestamp column?
+
+10. RDD Transformations: Convert an RDD of tuples into a key-value paired RDD and apply a reduceByKey operation to sum the values for each key.
