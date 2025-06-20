@@ -45,29 +45,29 @@ object Prac01 {
 
   }
 
-  def precursor(courses:mutable.Map[Int,Int],target:Int,recommendation:List[Int]):Boolean = {
-    val visited = mutable.Set[Int]()
-    val res = mutable.Stack[Int]()
-
-
-    //dfs
-    def dfs(node:Int):Unit ={
-      if(!visited.contains(node)) {
-        visited.add(node) // vised += node
-        for (preCursor <- graph
-            //dfs()
-
-        res.push(node)
-      }
-    }
-
-    for(node <- graph.keys()) {
-
-    }
-    // re -> input
-    //
-    return  false
-  }
+//  def precursor(courses:mutable.Map[Int,Int],target:Int,recommendation:List[Int]):Boolean = {
+//    val visited = mutable.Set[Int]()
+//    val res = mutable.Stack[Int]()
+//
+//
+//    //dfs
+//    def dfs(node:Int):Unit ={
+//      if(!visited.contains(node)) {
+//        visited.add(node) // vised += node
+//        for (preCursor <- graph
+//            //dfs()
+//
+//        res.push(node)
+//      }
+//    }
+//
+//    for(node <- graph.keys()) {
+//
+//    }
+//    // re -> input
+//    //
+//    return  false
+//  }
 
 
 
