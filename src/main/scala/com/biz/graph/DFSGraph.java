@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DFSGraph {
     private int vertices; // Number of vertices
-    private LinkedList<Integer>[] adjList; // Adjacency list
+    private LinkedList<Integer>[] adjList = null; // Adjacency list
 
     // Constructor
     public DFSGraph(int v) {
