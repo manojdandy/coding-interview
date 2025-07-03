@@ -1,0 +1,298 @@
+DS1
+
+4TB
+
+-
+- GCS ,parquet
+- visitor_id,
+
+LiveRamp - DS2
+25GB - parquet
+
+-visitor_id,lvr_id,pii,ip
+-visitor_id,lvr_id,pii,ip,sha2
+
+Join (DS1, DS2)
+
+
+
+Cadence : Every DAY
+--------------------
+
+1. Spark ()
+
+val df1 =
+val df2 =
+
+Time Taken : 4 Hour
+
+Optimization Techniques
+1. join visitor_id
+
+- visitor_id, sha2(col1,col2 ..)
+
+df2.select("visititor_id","sha2").
+
+// post
+val df3 =
+
+
+
+
+2. BigQuery (vendor-lock-in)
+
+-------------------
+
+User Activity parquet (user_activity.parquet) 10TB
+Records details for each user session.
+
+id  session_begin             session_end
+1   2022-01-01:12:00:00.000   2022-01-01:12:05:00.000 ~ session_end-session_begin = session_time
+2   2022-03-03:02:00:00.000   2022-03-03:02:01:00.000
+1   2022-03-05:12:30:00.000   2022-03-05:12:50:00.000
+
+
+
+ 1 40
+ 1 60
+1. 80
+
+
+User Profile parquet (user_profile.parquet) 20GB
+Provides details of each user.
+
+id    join_date    level
+1     2020-02-03   basic
+2     2011-03-05   expert
+3     2019-11-06   basic
+
+Available levels:
+•   basic
+•   enhanced
+•   expert
+
+
+
+Write a function to return the top 10 expert users for each month in 2022. Ranking of users is measured by the total session time of a user during the month.
+You may assume the dataset only has records for 2022.
+
+Sample Output:
+
+{'Jan': ['1', '20', '301', '4', '40', '65', '122', '1209', '25', '34'],
+'Feb':[...],
+  ...
+}
+
+
+Design: For Exper Users only
+
+Top 10 exper user, ranking based on total session time per month
+
+
+TOp 10 user, monthly wise, ranked based on total session time
+
+
+val activityDF =
+//ExpertUsers
+val userDF = spark.read.parquet().where("level='expert'").select("id").distinct
+//can not do broadcast   ~~
+
+
+
+//expert users acitvity
+val df = activityDF.as("a").join(userDF,Seq("id")).select("a.*").withColumn("total_session_time",$"session_end" - $"session_begin").withColumn("month",month($"session_begin"))
+
+
+
+// calculate total session time
+df.groupBy(""user_id","month").add(max("session").as("max_time")).orderBy($"max_time".desc).limit(10)
+
+
+
+### 6 hours
+repartiiong for small files ~ 128MB
+Spark Config
+Exector Memory ~
+No of cores ~
+
+4-5 per exectuor
+
+increment read,
+
+
+Events : later,
+- lookup table
+
+-
+
+- Airflow
+-- sch
+-   airflow/compose getting killed
+
+
+
+1.8bllion ~ piteny bowes
+- Blanket
+-
+
+
+GOogle SAAS
+
+LB - VMs
+
+
+lip postal -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Feature Store
+
+Machine lerning
+
+identity gr (30 team member)
+
+1.8 B -> 300m
+30 team/ use
+<Address_ID,f1,f2, .. >
+<custoemr_id,pii,f1,f2 ..>
+Bert
+
+
+Airflow & Spark
+raw/gcs -> Spark to process -> GCS (Downstrams)
+
+1. Address
+2. Customer
+
+
+Onoine
+
+customer_id <- get <- features
+a. lowe latency
+b. API
+
+Redis -> VM -> LB
+
+/v1/{customer_id}/customer
+/v1/{address_id}/ adderess <
+
+
+Use-case ( Ml learning)
+Batching
+Demand Forecasting
+Supply Chain
+AD Tech
+
+Oneline(Real)
+-
+
+Dicovery ()
+
+Airflow
+- Monitoring/alerting
+- Syncing
+
+
+GCP
+Redis -> VM -> LB
+
+
+
+
+2. Address Std
+VM - LB
+
+
+3. Optimization of (framgemention
+)
+
+
+4. Ml integration
+--
+
+40 hours ? 30
+
+USCH -> Prifile Matching -> CC -> Identoty
+
+V1 of model
+v2 of model
+
+RBM {}
+MI {}
+
+linkages
+
+python
+
+@pandasUDF(Arrow transformation)
+
+
+- Look up table
+
+- f1,f2 ... {}
+
+Spark and python
+
+
+linkages
+
+fn1,ln1, ...  , fn2,ln2    -> score
+
+
+
+
+
+Intity
+
+customer id,fn1,ln, email ...
+
+
+
+Post
+----
+Scala Spark ()
+
+Spark2 -> Spark3
+
+
+Idea -> Suport team (run books -)
+---
+Alert -> failure
+
+
+Agemtics /LLM
+
+input : give error
+output : resolution steps for that error
+
+
+
+conflunes pages -> vectors db (FAISS,milvus db)
+
+chuking of documents
+
+chatgps ll
+
+input -> retriver -> context -> LLM -> output
+
+prompt = {
+	"",
+
+}
+
+
+Cost Analysis
+- cost vs human effort
+-
