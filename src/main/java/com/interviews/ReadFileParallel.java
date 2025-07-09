@@ -1,9 +1,4 @@
-import com.leetcode.Transformer;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
+package com.interviews;
 
 public class ReadFileParallel {
 
