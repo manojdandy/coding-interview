@@ -1,0 +1,17 @@
+System Design
+-------------
+1. Read parellely ,transform and store
+2. Implement SAGA Distributed Transaction
+3. Distribute Counter Implemenation
+4. Rate Limiter
+5. Event Bus
+
+LLD
+---------------
+1. Cache Implementation
+2.
+Coding
+-------
+1.Find All duplicates and missing number from 1 to N
+2. Topological Sort
+3. Minimum Window Substring
