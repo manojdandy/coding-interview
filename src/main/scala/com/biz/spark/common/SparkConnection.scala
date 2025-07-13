@@ -22,7 +22,8 @@ object SparkConnection extends Serializable {
   @transient lazy val spark: SparkSession = {
     if (useLocalSession) {
       //SparkSession.builder.enableHiveSupport().master("local[2]").getOrCreate()
-      SparkSession.builder.master("local[2]")
+      SparkSession.builder.enableHiveSupport().master("local[2]")
+        .config("spark.sql.warehouse.dir", "file:/tmp/spark-warehouse") // or an HDFS path
       //  .config("spark.eventLog.enabled", "true")
         //.config("spark.eventLog.dir", "file:///tmp/spark-events")
         .getOrCreate()
