@@ -7,3 +7,5 @@ hs_err_pid*
 .idea/
 dependency-reduced-pom.xml
 target/
+coding_interview.iml
+*.iml

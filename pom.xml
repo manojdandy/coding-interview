@@ -12,10 +12,10 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.version>2.12.15</scala.version>
+        <scala.version>2.12.17</scala.version>
         <scala.binary.version>2.12
         </scala.binary.version> <!-- explore 2.11.8 also, as spark-submit is configured as per this version -->
-        <spark.version>3.3.0</spark.version>
+        <spark.version>3.4.4</spark.version>
         <jackson.version>2.13.3</jackson.version>
         <spring.boot.version>2.7.18</spring.boot.version>
     </properties>
@@ -26,6 +26,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -96,7 +102,7 @@
         <dependency>
             <groupId>com.holdenkarau</groupId>
             <artifactId>spark-testing-base_${scala.binary.version}</artifactId>
-            <version>${spark.version}_1.4.5</version>
+            <version>3.4.2_2.0.1</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -170,8 +176,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
 
