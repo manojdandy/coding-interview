@@ -10,7 +10,9 @@ import java.util.List;
 
 public class EmplyeeDB {
     public static void main(String[] args) throws IOException {
-        System.out.println(findEmployees());
+        Employee employee = findEmployees().stream().filter(e ->"TRUE".equals(e.getNewJoiner()))
+                        .findAny().orElse(null);
+        System.out.println(employee);
     }
     public static List<Employee> findEmployees() {
         File file = new File("/Users/manojbeniwal/intelij/coding-interview/src/main/resources/dataset/employees.json");
