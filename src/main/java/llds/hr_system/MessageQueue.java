@@ -8,7 +8,7 @@ public class MessageQueue {
     public void send(int userId) {
         queue.add(userId);
     }
-    private int receive() throws InterruptedException {
+    public int receive() throws InterruptedException {
         return queue.take();// blcoking
     }
 }

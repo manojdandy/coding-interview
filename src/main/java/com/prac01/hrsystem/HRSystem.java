@@ -1,4 +1,6 @@
-package llds.hr_system;
+package com.prac01.hrsystem;
+
+import com.prac01.hrsystem.queue.MessageQueue;
 
 import java.util.List;
 
@@ -10,7 +12,8 @@ public class HRSystem {
     }
     public void emitUserIds(List<Integer> userIds) {
         for(int id:userIds) {
-            queue.send(id);
+            queue.sent(id);
         }
     }
+
 }
