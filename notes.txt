@@ -15,3 +15,18 @@ Coding
 1.Find All duplicates and missing number from 1 to N
 2. Topological Sort
 3. Minimum Window Substring
+
+
+SQL Questions?
+1. how indexing works on composite keys?
+2. Find the top 3 transaction per user based on amount?
+3. Emplyees table (emp_id,name,dept_no,join_date)
+   find the emploee list whose salary is greater than avg salary in their department
+4. find out highest employees enrolled in a year
+5. Deduplicate the records by user_id , keeping the latest timestamp
+6. Identify the users who had gaps > 7 days between logins
+7. Get rolling 7 days transaction sums per user (window function)
+8. Find product with zero sales for 3 consecutive days
+9. query for first pruchage per region using rank()
+10. write query that can perform better than distinct
+
